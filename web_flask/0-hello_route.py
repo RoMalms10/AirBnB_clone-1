@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_HBNB():
+    """ Prints a message when the route / is taken in the web application """
     return "Hello HBNB!"
 
 
