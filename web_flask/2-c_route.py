@@ -22,7 +22,7 @@ def print_hbnb():
     """ Prints a different mesage when the route is /hbnb """
     return "HBNB"
 
-@app.route('/c/<text>', strict_slashes=False)
+@app.route('/c/<string:text>', strict_slashes=False)
 def print_c_plus_text():
     """ Prints C and then the text that is added to the route """
     return "C {}".format(text)
