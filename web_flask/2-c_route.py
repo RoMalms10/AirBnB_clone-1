@@ -17,10 +17,12 @@ def print_hello_HBNB():
     """ Prints a message when the route / is taken in the web application """
     return "Hello HBNB!"
 
+
 @app.route('/hbnb', strict_slashes=False)
 def print_hbnb():
     """ Prints a different mesage when the route is /hbnb """
     return "HBNB"
+
 
 @app.route('/c/<text>', strict_slashes=False)
 def print_c_plus_text(text):

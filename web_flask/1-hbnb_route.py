@@ -15,6 +15,7 @@ def hello_HBNB():
     """ Prints a message when the route / is taken in the web application """
     return "Hello HBNB!"
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """ Prints a different mesage when the route is /hbnb """
