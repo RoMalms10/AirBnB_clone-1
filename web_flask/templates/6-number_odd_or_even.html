@@ -4,11 +4,11 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        <H1>{% if n is divisibleby(2) %} {{ n }} is even
+        <H1>{%- if n is divisbleby(2) %}
 		Number: {{ n }} is even
-	    {% else %}
+	    {%- else %}
 	    	Number: {{ n }} is odd
-	    {% endif %}
+	    {%- endif %}
 	</H1>
     </BODY>
 </HTML>
