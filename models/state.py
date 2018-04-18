@@ -4,11 +4,11 @@
 '''
 
 from models.base_model import BaseModel, Base
-#from models.city import City
 import models
 import os
 from sqlalchemy import Column, String, Integer, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
+
 
 class State(BaseModel, Base):
     '''
@@ -23,7 +23,7 @@ class State(BaseModel, Base):
 
     else:
 
-        name = ""    
+        name = ""
 
         @property
         def cities(self):
