@@ -6,7 +6,7 @@
 
 from flask import Flask
 from flask import render_template
-import models
+from models import storage, classes
 
 
 app = Flask(__name__)
@@ -15,14 +15,14 @@ app = Flask(__name__)
 @app.route('/states_list', strict_slashes=False)
 def display_states_list_html():
     """ Method that displays an HTML page that lists states """
-    state_dict = models.storage.all(models.classes["State"])
+    state_dict = storage.all(classes["State"])
     return render_template('7-states_list.html', state=state_dict)
 
 
 @app.teardown_appcontext
 def close_session(exception):
     """ Method that closes the session """
-    models.storage.close()
+    storage.close()
 
 
 if __name__ == "__main__":
