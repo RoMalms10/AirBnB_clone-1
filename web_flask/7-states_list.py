@@ -15,14 +15,14 @@ app = Flask(__name__)
 @app.route('/states_list', strict_slashes=False)
 def display_states_list_html():
     """ Method that displays an HTML page that lists states """
-    state_dict = storage.all(models.classes["State"])
+    state_dict = models.storage.all(models.classes["State"])
     return render_template('7-states_list.html', state_dict)
 
 
 @app.teardown_appcontext
 def close_session(exception):
     """ Method that closes the session """
-    storage.close()
+    models.storage.close()
 
 
 if __name__ == "__main__":
