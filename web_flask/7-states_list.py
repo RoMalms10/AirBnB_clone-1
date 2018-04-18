@@ -20,7 +20,7 @@ def display_states_list_html():
 
 
 @app.teardown_appcontext
-def close_session():
+def close_session(exception):
     """ Method that closes the session """
     storage.close()
 
