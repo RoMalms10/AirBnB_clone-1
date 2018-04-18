@@ -19,7 +19,7 @@ def display_states_list_html():
     return render_template('7-states_list.html', state_dict)
 
 
-@app.teardown_appcontext()
+@app.teardown_appcontext
 def close_session():
     """ Method that closes the session """
     storage.close()
