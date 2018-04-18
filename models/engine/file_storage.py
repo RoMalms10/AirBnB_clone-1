@@ -70,3 +70,10 @@ class FileStorage:
         key = str(obj.__class__.__name__) + "." + str(obj.id)
         del self.__objects[key]
         self.save()
+
+    def close(self):
+        '''
+            Calls reload to get the most updated information by
+            "closing" the most recent session.
+        '''
+        self.reload()

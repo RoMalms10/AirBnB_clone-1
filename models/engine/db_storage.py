@@ -6,11 +6,11 @@
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-#from models.base_model import Base
 
 
 class DBStorage():
     '''
+        Stores and loads from a database rather than JSON.
     '''
 
     __engine = None
@@ -71,3 +71,7 @@ class DBStorage():
         session_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(session_factory)
         self.__session = Session()
+
+    def close(self):
+        ''' Closes the current session and reloads the databases '''
+        self.__session.remove()
