@@ -16,7 +16,7 @@ app = Flask(__name__)
 def display_states_list_html():
     """ Method that displays an HTML page that lists states """
     state_dict = models.storage.all(models.classes["State"])
-    return render_template('7-states_list.html', state_dict)
+    return render_template('7-states_list.html', state=state_dict)
 
 
 @app.teardown_appcontext
