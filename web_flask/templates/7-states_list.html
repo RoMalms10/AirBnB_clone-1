@@ -6,8 +6,8 @@
     <BODY>
         <H1>States</H1>
 	<UL>
-		{% tup for key, value in state.items()|sort(attribute='tup[1]') %}
-		<LI>{{ value.id }}: <B>{{ value.name }}</B></LI>
+		{% for state_obj in state|sort(attribute='name') %}
+		<LI>{{ state_obj.id }}: <B>{{ state_obj.name }}</B></LI>
 		{% endfor %}
 	</UL>
     </BODY>
