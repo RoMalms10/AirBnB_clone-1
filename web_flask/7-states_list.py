@@ -15,8 +15,11 @@ app = Flask(__name__)
 @app.route('/states_list', strict_slashes=False)
 def display_states_list_html():
     """ Method that displays an HTML page that lists states """
+    state_list = []
     state_dict = storage.all(classes["State"])
-    return render_template('7-states_list.html', state=state_dict)
+    for key, value in state_dict.items():
+        state_list.append(value)
+    return render_template('7-states_list.html', state=state_list)
 
 
 @app.teardown_appcontext
