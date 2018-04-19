@@ -18,7 +18,7 @@ def display_cities_by_state_html():
         and cities in that state
     """
     state_dict = storage.all(classes["State"])
-    #Key is State obj, value is a list of city obj in that state
+    # Key is State obj, value is a list of city obj in that state
     state_and_city_dict = {}
     for key, value in state_dict.items():
         state_and_city_dict[value] = value.cities
