@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ Module that starts a Flask web application with routes and web templates.
     - Uses FileStorage and DBStorage classes.
-    - One route is /cities_by_states and calls a function that displays HTML page.
+    - One route is /cities_by_states and calls a function that displays
+    an HTML page.
 """
 
 from flask import Flask
