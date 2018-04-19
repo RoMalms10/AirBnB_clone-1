@@ -22,7 +22,7 @@ def display_cities_by_state_html():
     #Key is State obj, value is a list of city obj in that state
     state_and_city_dict = {}
     for key, value in state_dict.items():
-        state_and_city_dict[value] = value.cities
+        state_and_city_dict[value] = value.cities()
     return render_template('8-cities_by_states.html', cs=state_and_city_dict)
 
 
