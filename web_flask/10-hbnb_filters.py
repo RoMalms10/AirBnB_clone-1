@@ -5,6 +5,12 @@
     States in an HTML page.
     - One route is /states/<id> and calls a function that will display
     a specific State in the HTML page.
+    - One route is /cities_by_states and calls a function that displays
+    an HTML page.
+    - One route is /states_list and calls a function that displays HTML page.
+    - One route is /hbnb_filters and calls a function that displays an HTML
+    page that renders into a basic replica of AirBnB with Jinja2
+    implementation to display information.
 """
 
 from flask import Flask
@@ -65,7 +71,14 @@ def display_state_id(id):
 @app.route('/hbnb_filters', strict_slashes=False)
 def display_web_static_html():
     """ Method displays the HTML page for web static """
-    return render_template('10-hbnb_filters.html')
+    state_dict = storage.all(classes["State"])
+    # Key is State obj, value is a list of city obj in that state
+    state_and_city_dict = {}
+    for key, value in state_dict.items():
+        state_and_city_dict[value] = value.cities
+    amenity_dict = storage.all(classes["Amenity"])
+    return render_template('10-hbnb_filters.html', sc=state_and_city_dict,
+                            amenities=amenity_dict)
 
 
 @app.teardown_appcontext
